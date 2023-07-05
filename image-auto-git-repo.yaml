@@ -1,0 +1,12 @@
+apiVersion: source.toolkit.fluxcd.io/v1
+kind: GitRepository
+metadata:
+  name: podinfo
+  namespace: flux-system
+spec:
+  interval: 30s
+  url: ssh://git@github.com/pcarangelo/flux-app
+  secretRef:
+    name: podinfo-auth
+  ref:
+    branch: main
